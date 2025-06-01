@@ -11,15 +11,20 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+/**
+ * A class for the loading screen at the beginning of the game.
+ */
 public class Loading1 {
     private VBox vbox;
     private Scene scene;
     private Text lore;
     private Text levelInfo;
     private AnchorPane pane;
+    private int level;
 
     public Loading1(int level, int width, int height) {
 
+        this.level = level;
 
         pane = new AnchorPane();
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
@@ -45,4 +50,5 @@ public class Loading1 {
     public Scene getScene(){
         return scene;
     }
+
 }

@@ -100,11 +100,16 @@ public class GameMenu {
 
     }
 
+    /**
+     * Shows at first the loading screen and then starts up the game.
+     * @param level = number of the current level that's being played
+     * @throws InterruptedException = throws out an exception if something goes wrong (due to Thread.sleep())
+     */
     private void start(int level) throws InterruptedException {
         Loading1 loading = new Loading1(level, width, height);
         stage.setScene(loading.getScene());
         Game game = new Game(level, height, width, stage, this);
-        Thread.sleep(100);
+        Thread.sleep(10000);
 
         game.start();
     }
