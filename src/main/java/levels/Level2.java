@@ -4,6 +4,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import loading.Loading1;
+import loading.Loading2;
+import loading.Loading3;
 import main.Game;
 import main.GameMenu;
 
@@ -85,8 +87,13 @@ public class Level2 extends Level {
                     stage.setScene(scene11);
                     Thread.sleep(5000);
 
-                    Loading1 loading2 = new Loading1(level, width, height);
-                    stage.setScene(loading2.getScene());
+                    if(level == 2) {
+                        Loading2 loading2 = new Loading2(level, width, height);
+                        stage.setScene(loading2.getScene());
+                    }else if(level == 3){
+                        Loading3 loading3 = new Loading3(level, width, height);
+                        stage.setScene(loading3.getScene());
+                    }
                     Thread.sleep(7000);
                     game.start();
 

@@ -4,6 +4,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import loading.Loading1;
+import loading.Loading2;
+import loading.Loading3;
 import main.Game;
 import main.GameMenu;
 
@@ -79,16 +81,15 @@ public class Level3 extends Level {
                 Thread.sleep(1000);
 
                 if (bulletFull == bulletCount) {
-                    level++;
                     pressed = false;
-                    game.setLevel(level);
                     stage.setScene(scene11);
                     Thread.sleep(5000);
 
-                    Loading1 loading2 = new Loading1(level, width, height);
-                    stage.setScene(loading2.getScene());
-                    Thread.sleep(7000);
-                    game.start();
+                    ending.setVisible(true);
+                    ending.toFront();
+                    stage.setScene(scene7);
+                    Thread.sleep(10000);
+                    System.exit(0);
 
                 } else {
                     bulletCount--;
