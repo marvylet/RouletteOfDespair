@@ -1,6 +1,8 @@
 package main;
 
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -22,10 +24,11 @@ public class GameMenu {
     private Text startText;
     private Text endText;
     private VBox vBox;
+    private ImageView background;
 
     /**
      * Initializes all values, creates the whole menu
-     * @param stage
+     * @param stage = The stage that shows each scene on the screen
      */
     public GameMenu(Stage stage) {
         this.stage = stage;
@@ -34,6 +37,7 @@ public class GameMenu {
         pane = new AnchorPane();
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
         scene = new Scene(pane, width, height);
+        background = new ImageView("file:resource/menu/menuBackground.png");
 
         gameTitle = new Text("Roulette of Despair");
         gameTitle.setFill(Color.WHITE);
@@ -50,7 +54,7 @@ public class GameMenu {
         AnchorPane.setLeftAnchor(vBox, 600.0);
         vBox.getChildren().addAll(startText, endText);
 
-        pane.getChildren().addAll(vBox, gameTitle);
+        pane.getChildren().addAll(background, vBox, gameTitle);
 
 
         stage.setScene(scene);

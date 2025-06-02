@@ -6,6 +6,8 @@ import levels.Inventory;
 import levels.Level;
 import loading.Loading1;
 
+import java.util.Random;
+
 /**
  * Class where everything about the game is initialized, including individual levels, inventory etc.
  */
@@ -19,6 +21,7 @@ public class Game {
     private Inventory inventory;
     private Button backButton;
     private Loading1 loading1;
+    private Random rd;
 
     public Game(int level, int height, int width, Stage stage, GameMenu menu) {
         this.level = level;
@@ -26,6 +29,7 @@ public class Game {
         this.width = width;
         this.stage = stage;
         this.menu = menu;
+        rd = new Random();
 
         backButton = new Button();
         inventory = new Inventory(width, height, backButton(), this);
@@ -38,6 +42,7 @@ public class Game {
      */
     public void start(){
         levelClass = Level.factory(level, height, width, stage, menu, inventory, loading1, this);
+
         stage.setScene(levelClass.getScene());
     }
 

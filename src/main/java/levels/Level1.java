@@ -41,6 +41,9 @@ public class Level1 extends Level {
         pane11.getChildren().addAll(npcDead);
         scene11 = new Scene(pane11, width, height);
 
+        bulletFull = rd.nextInt(5) + 1;
+
+
     }
 
 

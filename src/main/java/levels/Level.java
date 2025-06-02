@@ -400,4 +400,8 @@ public abstract class Level {
     public int getLevel() {
         return level;
     }
+
+    public void setBulletFull(int bulletFull) {
+        this.bulletFull = bulletFull;
+    }
 }
